@@ -1,0 +1,47 @@
+﻿@model List<SucursalModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <i class="bi bi-list-ul"></i> Lista Sucursales
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Admin" class="btn btn-success"><i class="bi bi-plus"></i> Nueva Sucursal</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Ciudad</td>
+                        <td>@item.Provincia</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Correo</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Admin" class="btn btn-primary btn-sm" asp-route-IdSucursal="@item.IdSucursal">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Admin" class="btn btn-danger btn-sm" asp-route-IdSucursal="@item.IdSucursal"><i class="bi bi-trash"></i>Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

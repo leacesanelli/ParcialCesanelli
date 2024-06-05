@@ -1,0 +1,50 @@
+﻿@model SucursalModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Sucursal
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Admin" method="post">
+            <input asp-for="IdSucursal" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input asp-for="Direccion" type="text" class="form-control">
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ciudad</label>
+                <input asp-for="Ciudad" type="text" class="form-control">
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Provincia</label>
+                <input asp-for="Provincia" type="text" class="form-control">
+                <span asp-validation-for="Provincia" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input asp-for="Telefono" type="text" class="form-control">
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="Correo" type="text" class="form-control">
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i></button>
+            <a asp-action="Listar" asp-controller="Admin" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
+

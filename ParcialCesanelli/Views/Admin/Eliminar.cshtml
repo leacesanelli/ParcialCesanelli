@@ -1,0 +1,27 @@
+﻿@model SucursalModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        Eliminar Sucursal
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar" asp-controller="Admin" method="post">
+
+            <input asp-for="IdSucursal" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Quieres eliminar la Sucursal  @Html.DisplayTextFor(m => m.Nombre) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>Eliminar</button>
+            <a asp-action="Listar" asp-controller="Admin" class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+
+    </div>
+</div>
